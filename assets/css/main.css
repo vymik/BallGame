@@ -1,0 +1,71 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+html {
+  font-size: 16px;
+}
+
+html,
+body {
+  margin: 0 auto;
+}
+
+section div {
+  margin: 5% auto;
+  width: 85%;
+  height: 75vh;
+  background-image: url("http://sportstalk1400.com/wp-content/uploads/2017/06/normansportstv2.png");
+  background-size: cover;
+  position: relative;
+}
+
+section div img {
+  position: absolute;
+  width: 150px;
+  top: 0%;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  cursor: pointer;
+}
+
+section div h3,
+section div h2,
+section div h1 {
+  color: white;
+  position: absolute;
+  padding: 15px;
+  top: 25%;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  cursor: pointer;
+  font-size: 3rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+}
+
+section div h3,
+section div h2 {
+  display: none;
+}
+
+section div h3 {
+  font-size: 2rem;
+  top: 60%;
+}
+
+section p {
+  position: absolute;
+  margin: 0;
+  top: 1%;
+  right: 2%;
+  color: white;
+  font-size: 3rem;
+}
+/*# sourceMappingURL=main.css.map */
