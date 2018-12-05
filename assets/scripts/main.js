@@ -37,7 +37,7 @@ let kick = (ball) => {
         kicks++;
         score.textContent = "Score: "+ kicks;
     }
-    if(kicks % 15 === 0 && kicks > 0){
+    if(kicks % 20 === 0 && kicks > 0){
         levelUp();
     }
     // fall();
