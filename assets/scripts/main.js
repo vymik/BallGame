@@ -18,7 +18,7 @@ let fall = () => {
     let myTimer = setTimeout(() => {
         for(let i =0; i<balls.length;i++){
             if(parseInt(balls[i].style.top)<= 80){
-            balls[i].style.top = parseInt(balls[i].style.top) + 5 + "%";
+            balls[i].style.top = parseInt(balls[i].style.top) + 2 + "%";
             console.log(level);
             }
             if(parseInt(balls[i].style.top) > 75){
@@ -27,7 +27,7 @@ let fall = () => {
             }
         }
         fall();
-    }, 1500 / level);
+    }, 200 / level);
 }
 
 let kick = (ball) => {
