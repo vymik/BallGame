@@ -31,6 +31,8 @@ section div img {
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
   cursor: pointer;
 }
 
@@ -58,6 +60,15 @@ section div h2 {
 section div h3 {
   font-size: 2rem;
   top: 60%;
+}
+
+section div #levelUp {
+  color: white;
+  position: absolute;
+  margin: 0;
+  top: 5%;
+  left: 5%;
+  font-size: 2rem;
 }
 
 section p {

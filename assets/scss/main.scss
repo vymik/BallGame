@@ -14,7 +14,7 @@ section{
             top: 0%;
             left: 50%;
             transform: translate(-50%);
-            // transition: all 1s ease-in-out;
+            transition: all 0.2s linear;
             cursor: pointer;
         }
         h3,
@@ -38,6 +38,14 @@ section{
         h3{
             font-size: 2rem;
             top: 60%;
+        }
+        #levelUp{
+            color: white;
+            position: absolute;
+            margin: 0;
+            top: 5%;
+            left: 5%;
+            font-size: 2rem;
         }
 
     }    

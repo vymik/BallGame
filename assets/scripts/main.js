@@ -1,7 +1,6 @@
 "use strict";
 
-let ball = document.querySelector("img");
-let rect = ball.getBoundingClientRect();
+let balls = document.querySelectorAll("img");
 let score = document.querySelector("p");
 let startButton = document.querySelector("h1");
 let gameOver = document.querySelector("h2");
@@ -17,32 +16,56 @@ startButton.addEventListener("click", () =>{
 
 let fall = () => {
     let myTimer = setTimeout(() => {
-        if(parseInt(ball.style.top)<= 80){
-        ball.style.top = parseInt(ball.style.top) + 5 + "%";
-        console.log(level);
+        for(let i =0; i<balls.length;i++){
+            if(parseInt(balls[i].style.top)<= 80){
+            balls[i].style.top = parseInt(balls[i].style.top) + 5 + "%";
+            console.log(level);
+            }
+            if(parseInt(balls[i].style.top) > 75){
+                gameOver.style.display = "block";
+                startAgain.style.display = "block";
+            }
         }
-        if(parseInt(ball.style.top) > 75){
-            gameOver.style.display = "block";
-            startAgain.style.display = "block";
-        }
-
         fall();
-    }, 1000 / level);
+    }, 1500 / level);
 }
 
-
-ball.addEventListener("click", () =>{
+let kick = (ball) => {
     if(parseInt(ball.style.top)>= 10){
-    ball.style.top = parseInt(ball.style.top) - 10 + "%";
-    kicks++;
-    score.textContent = "Score: "+ kicks;
+        // ball.style.top = parseInt(ball.style.top) - 10 + "%";
+        ball.style.top = "0%";
+        kicks++;
+        score.textContent = "Score: "+ kicks;
     }
-    if(kicks % 15 === 0){
-        level++;
-    } 
-    console.log(level);
+    if(kicks % 15 === 0 && kicks > 0){
+        levelUp();
+    }
     // fall();
-});
+}
+
+// ball.addEventListener("click", () =>{
+//     if(parseInt(ball.style.top)>= 10){
+//     // ball.style.top = parseInt(ball.style.top) - 10 + "%";
+//     ball.style.top = "0%";
+//     kicks++;
+//     score.textContent = "Score: "+ kicks;
+//     }
+//     if(kicks % 15 === 0 && kicks > 0){
+//         levelUp();
+//     } 
+//     console.log(level);
+//     // fall();
+// });
+
+let levelUp = () => {
+    level++;
+    document.getElementById("levelUp").style.display = "block";
+    document.getElementById("levelUp").innerText = "Level: " + level;
+    
+    // setTimeout(() => {
+    //     document.getElementById("levelUp").style.display = "none";
+    // }, 500);
+}
 
 startAgain.addEventListener("click", () =>{
     location.reload();
