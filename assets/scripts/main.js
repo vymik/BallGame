@@ -17,7 +17,7 @@ startButton.addEventListener("click", () =>{
 let fall = () => {
     let myTimer = setTimeout(() => {
         for(let i =0; i<balls.length;i++){
-            if(parseInt(balls[i].style.top)<= 80){
+            if(parseInt(balls[i].style.top)<= 85){
             balls[i].style.top = parseInt(balls[i].style.top) + 2 + "%";
             console.log(level);
             }
