@@ -13,9 +13,12 @@ section{
             width: 150px;
             top: 0%;
             left: 50%;
-            transform: translate(-50%);
+            transform-origin: 50% 50%;
+            transform: translate(-50%) rotate(45deg);
             transition: all 0.2s linear;
             cursor: pointer;
+            animation: none;
+
         }
         h3,
         h2,
@@ -65,4 +68,11 @@ section{
         font-size: 3rem;
     }
         
+}
+
+@keyframes roll{
+    
+    0% {transform: rotate(0deg)}
+    // 50% {transform: rotate(360deg)}
+    100% {transform: rotate(360deg)}
 }

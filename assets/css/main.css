@@ -29,11 +29,15 @@ section div img {
   width: 150px;
   top: 0%;
   left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transform: translate(-50%) rotate(45deg);
+          transform: translate(-50%) rotate(45deg);
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
   cursor: pointer;
+  -webkit-animation: none;
+          animation: none;
 }
 
 section div h3,
@@ -86,5 +90,27 @@ section p {
   right: 2%;
   color: white;
   font-size: 3rem;
+}
+
+@-webkit-keyframes roll {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes roll {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 /*# sourceMappingURL=main.css.map */

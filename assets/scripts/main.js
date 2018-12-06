@@ -11,17 +11,23 @@ let kicks = 0;
 startButton.addEventListener("click", () =>{
     fall();
     startButton.style.display = "none";
+    for(let i =0; i<balls.length;i++){
+        balls[i].style.animation = "roll 1s infinite linear";
+    }
 });
 
 let endGame = () => {
     gameOver.style.display = "block";
     startAgain.style.display = "block";
+    for(let i =0; i<balls.length;i++){
+        balls[i].style.animation = "none";
+    }
 };
 
 let fall = () => {
     let myTimer = setTimeout(() => {
         for(let i =0; i<balls.length;i++){
-            if(parseInt(balls[i].style.top)<= 85){
+            if(parseInt(balls[i].style.top)<= 78){
             balls[i].style.top = parseInt(balls[i].style.top) + 2 + "%";
             }
             if(parseInt(balls[i].style.top) > 75){
