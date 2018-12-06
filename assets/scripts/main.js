@@ -13,6 +13,7 @@ startButton.addEventListener("click", () =>{
     startButton.style.display = "none";
     for(let i =0; i<balls.length;i++){
         balls[i].style.animation = "roll 1s infinite linear";
+        balls[i].style.display= "block";
     }
 });
 
@@ -21,6 +22,7 @@ let endGame = () => {
     startAgain.style.display = "block";
     for(let i =0; i<balls.length;i++){
         balls[i].style.animation = "none";
+        balls[i].style.display= "none";
     }
 };
 
