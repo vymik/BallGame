@@ -5,7 +5,7 @@ let score = document.querySelector("p");
 let startButton = document.querySelector("h1");
 let gameOver = document.querySelector("h2");
 let startAgain = document.querySelector("h3");
-let level=1;
+let level=2;
 let kicks = 0;
 
 startButton.addEventListener("click", () =>{
@@ -37,7 +37,7 @@ let fall = () => {
             }
         }
         fall();
-    }, 200 / level);
+    }, 200 / (level/2));
 };
 
 let kick = (ball) => {
@@ -54,7 +54,7 @@ let kick = (ball) => {
 let levelUp = () => {
     level++;
     document.getElementById("levelUp").style.display = "block";
-    document.getElementById("levelUp").innerText = "Level: " + level;  
+    document.getElementById("levelUp").innerText = "Level: " + (level - 1);  
 }
 
 startAgain.addEventListener("click", () =>{
