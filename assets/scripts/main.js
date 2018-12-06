@@ -11,28 +11,29 @@ let kicks = 0;
 startButton.addEventListener("click", () =>{
     fall();
     startButton.style.display = "none";
-})
+});
 
+let endGame = () => {
+    gameOver.style.display = "block";
+    startAgain.style.display = "block";
+};
 
 let fall = () => {
     let myTimer = setTimeout(() => {
         for(let i =0; i<balls.length;i++){
             if(parseInt(balls[i].style.top)<= 85){
             balls[i].style.top = parseInt(balls[i].style.top) + 2 + "%";
-            console.log(level);
             }
             if(parseInt(balls[i].style.top) > 75){
-                gameOver.style.display = "block";
-                startAgain.style.display = "block";
+               endGame();
             }
         }
         fall();
     }, 200 / level);
-}
+};
 
 let kick = (ball) => {
     if(parseInt(ball.style.top)>= 10){
-        // ball.style.top = parseInt(ball.style.top) - 10 + "%";
         ball.style.top = "0%";
         kicks++;
         score.textContent = "Score: "+ kicks;
@@ -40,31 +41,12 @@ let kick = (ball) => {
     if(kicks % 20 === 0 && kicks > 0){
         levelUp();
     }
-    // fall();
-}
-
-// ball.addEventListener("click", () =>{
-//     if(parseInt(ball.style.top)>= 10){
-//     // ball.style.top = parseInt(ball.style.top) - 10 + "%";
-//     ball.style.top = "0%";
-//     kicks++;
-//     score.textContent = "Score: "+ kicks;
-//     }
-//     if(kicks % 15 === 0 && kicks > 0){
-//         levelUp();
-//     } 
-//     console.log(level);
-//     // fall();
-// });
+};
 
 let levelUp = () => {
     level++;
     document.getElementById("levelUp").style.display = "block";
-    document.getElementById("levelUp").innerText = "Level: " + level;
-    
-    // setTimeout(() => {
-    //     document.getElementById("levelUp").style.display = "none";
-    // }, 500);
+    document.getElementById("levelUp").innerText = "Level: " + level;  
 }
 
 startAgain.addEventListener("click", () =>{
